@@ -17,16 +17,18 @@
    + View student grades / progress / notes from teachers
 
 ## Courses 
-+ Prebuilt content in lessons as well as options to build your own content
 + Games
 + Quizes
 + Assignments
    + Everything not started and in progress should be listed together. Two lists only: Not Finished & Finished
 
 ## Good Behavior Points
++ Have a way to give students "good behavior" points for things like good listening, hard working, on task
+   + Teacher can add notes to say what the point is for
 
 ## General Notes for content creation
 + Use Common Core Standards!
++ Prebuilt content in lessons as well as options to build your own content
 
 
 # User Stories:
