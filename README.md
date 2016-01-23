@@ -1,6 +1,7 @@
 # rosecitydevs-LMS
 
-# User Types
+# Planned Features Notes:
+## User Types
 + Student
    + Lots of pictures to make the site easier to navigate (for students still learning to read)
    + Big colorful simple buttons (with pictures)
@@ -15,14 +16,20 @@
    + Communication center for talking to teachers
    + View student grades / progress / notes from teachers
 
-# Courses 
+## Courses 
 + Prebuilt content in lessons as well as options to build your own content
 + Games
 + Quizes
 + Assignments
    + Everything not started and in progress should be listed together. Two lists only: Not Finished & Finished
 
-# Good Behavior Points
+## Good Behavior Points
 
-# General Notes for content building:
+## General Notes for content creation
 + Use Common Core Standards!
+
+
+# User Stories:
+
+
+# In Progress / Assigned 
