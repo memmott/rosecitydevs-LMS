@@ -6,15 +6,7 @@
    + Lots of pictures to make the site easier to navigate (for students still learning to read)
    + Big colorful simple buttons (with pictures)
 + Teacher
-   + See all of the student passwords (especially if they change them)
-   + Enter grades & comments that parents can view
-   + Communication center for talking to parents
-   + A communication center for teachers to connect with and share content with other teachers
-   + Search functions with tags for content 
-      + Search by standard (Common Core)
 + Parents
-   + Communication center for talking to teachers
-   + View student grades / progress / notes from teachers
 
 ## Courses 
 + Games
@@ -32,6 +24,30 @@
 
 
 # User Stories:
++ As a student I can: 
+	+ Click on a subject to take quizzes, tests or pratice (tracking my time and improvment)
+		+ view complete and incomplete assigments 
+	+ See my points (good behavior etc)
+	+ See my grades
++ As a teacher I can: 
+	+ Create quizes and test with tags
+ 	+ Share my quizes with other teachers
+	+ Select premade quizes from the database -searchable by tags
+	+ Update students grades & comment on assignments 
+	+ Email Parents
+	+See students usernames and passwords
+	+Give stuents points (or subtract when spent)
++ As a parent I can: 
+	+ Email the teacher and recieve correspondene from the teacher
+	+ See my child's assigments and due dates
+	+ view my child's grades
+	+ view my child's username and password 
 
 
-# In Progress / Assigned 
+#What I learned from this project
+
++ Michelle: 
++ Tabatha:
++ Kenny: 
++ Brigette: 
++ Lylah: 
