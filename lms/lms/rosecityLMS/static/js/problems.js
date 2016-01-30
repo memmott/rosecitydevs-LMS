@@ -2,7 +2,7 @@
 function makeQuiz() {
 	var quiz = []
 	for(var i=0;i<10;i++) {
-		quiz.push(problems[random(0, 4)]());
+		quiz.push(problems[random(0, problems.length - 1)]());
 	}
 	return quiz
 }
@@ -21,22 +21,22 @@ function readQuiz(quiz) {
 
 function renderQuiz(quiz) {
   var count = 1;
-  var questions = []
+  var questions = [];
+  var $quiz = [];
   for(var i=0;i<quiz.length;i++) {
     var problem = quiz[i];
-    var question = problem.question;
-    if(question.indexOf("{}") >= 0) {
-      var segments = question.split("{}");
-      var $question = $('<span></span>').text(segments[0]);
-      for(var j=1;j<segments.length;j++) {
-        $question.append($('<div></div>').addClass('blank-box'));
-        $question.append($('<span></span>').text(segments[j]));
-      }
-      
-    } else {
-      $question = $('<span></span>').text(question);
-    }
+    var $question = [];
     var $answers = [];
+    if(problem.question.indexOf("{}") >= 0) {
+      var segments = problem.question.split("{}");
+      $question.push(segments[0]);
+      for(var j=1;j<segments.length;j++) {
+        $question.push($('<div></div>').addClass('blank-box'));
+        $question.push(segments[j]);
+      }
+    } else {
+      $question = problem.question;
+    }
     if(typeof problem.answer === 'object') {
 	    for(var j=0;j<problem.answer.length; j++) {
 	      $answers.push($('<input>'))
@@ -44,10 +44,10 @@ function renderQuiz(quiz) {
     } else {
     	$answers = $('<input>');
     }
-    questions.push($("<p class='question'></p>").append($question))
-    questions.push($("<p class='answers'></p>").append($answers))
+    $quiz.push($("<p class='question question-" + (i + 1) + "'></p>").append($question))
+    $quiz.push($("<p class='answers answer-" + (i + 1) + "'></p>").append($answers))
   }
-  $('#target').append(questions);
+  $('#quiz').append($quiz);
 }
 
 //Utility Functions
@@ -56,19 +56,16 @@ function random(min, max) {
 }
 
 function randomOdd(min, max) {
-	var num, even = true;
-	while(even) {
-		num = random(min, max);
-		if(num % 2 !== 0) {
-			even = false;
-		}
-	}
+	var num = random(Math.floor(min / 2), Math.floor(max / 2)) * 2 + 1;
 	return num;
 }
 
-function convertToRomanNumeral(num) {
-  var numerals = [["M",1000],["D",500],["C",100],["L",50],["X",10],["V",5],["I",1]];
-  var subtractive = [["IIII", "IV"], ["VIIII", "IX"], ["VIV", "IX"] ,["XXXX", "XL"], ["LXXXX", "XC"], ["LXL", "XC"], ["CCCC", "CD"], ["DCCCC", "CM"], ["DCD", "CM"]];
+function randomLetter() {
+	return String.fromCharCode(random(97, 122));
+}
+
+function toRomanNumeral(num) {
+  var numerals = [["M",1000],["CM",900],["D",500],["CD",400],["C",100],["XC",90],["L",50],["XL",40],["X",10],["IX",9],["V",5],["IV",4],["I",1]];
   var output = "";
   for(var i=0;i<numerals.length;i++) {
     var letter = numerals[i][0];
@@ -76,14 +73,9 @@ function convertToRomanNumeral(num) {
     if(num>=value) {
       var mutiples = Math.floor(num/value);
       for(var j=0;j<mutiples;j++) {
-        output+=letter;
+        output += letter;
         num -= value;
       }
-    }
-  }
-  for(var k=0;k<subtractive.length;k++) {
-    if(output.indexOf(subtractive[k][0]) >=0) {
-      output = output.replace(subtractive[k][0], subtractive[k][1]);
     }
   }
  return output;
@@ -110,7 +102,7 @@ function yesOrNo(bool) {
 //Question functions
 function evalRomanNumeral() {
 	var num = random(1000, 3000);
-	var roman = convertToRomanNumeral(num);
+	var roman = toRomanNumeral(num);
 	return {
 		question: "What is " + num + " as a roman numeral?", 
 		answer: roman
@@ -165,12 +157,43 @@ function sumAndDiff() {
 	}
 }
 
+function varExpression() {
+	var nums = [random(2, 9), random(2, 9)];
+	var letter = randomLetter();
+	var sum = nums[0] + nums[1];
+	return {
+		question: "Find the value of the expression " + nums[0] + " + " + letter + " for " + letter + " = " + nums[1],
+		answer: sum
+	}
+}
 
-var problems = [evalRomanNumeral, isPrime, roundToHundred, twoOfFour, estimateSums, sumAndDiff];
+function increasingGrowth() {
+	var growth = random(2, 6);
+	var nums = [random(1, growth - 1)]
+	for(var i=0; i<5; i++) {
+		nums.push(nums[i] + growth)
+	}
+	return {
+		question: "Type the next number in this sequence: " + nums.slice(0, 5).join(", ") + ", {}.",
+		answer: nums[5]
+	}
+}
 
-current = problems[5]();
+var problems = [evalRomanNumeral, isPrime, roundToHundred, twoOfFour, estimateSums, sumAndDiff, varExpression, increasingGrowth];
+
+
+// renderQuiz(makeQuiz())
 
 // readQuiz(makeQuiz())
 
+
+var current = problems[7]();
 console.log(current.question);
 console.log(current.answer);
+
+
+/* Notes:
+potientially use d3 for geometry questions
+decide on a way to filter entry questions vs multiple choice, perhaps another attribute?
+find a way to render fractions properly
+*/
