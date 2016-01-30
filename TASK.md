@@ -1,5 +1,6 @@
 #FRONT END
-+Angular Controller (Brigette)
++Math Problems (Kenny)
++Angular Controllers (Brigette/Kenny)
 +Views: Student, Teacher, Parent (Brigette/Michelle)
 
 
