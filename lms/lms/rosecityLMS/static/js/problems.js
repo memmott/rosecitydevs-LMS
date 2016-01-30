@@ -1,3 +1,56 @@
+// Quiz Functions
+function makeQuiz() {
+	var quiz = []
+	for(var i=0;i<10;i++) {
+		quiz.push(problems[random(0, 4)]());
+	}
+	return quiz
+}
+
+function readQuiz(quiz) {
+	var count = 1;
+	for(var i=0;i<quiz.length;i++) {
+		var problem = quiz[i];
+		console.log(count + ") ")
+		console.log("Q: " + problem.question);
+		console.log("A: " + problem.answer);
+		console.log(" ");
+		count ++;
+	}
+}
+
+function renderQuiz(quiz) {
+  var count = 1;
+  var questions = []
+  for(var i=0;i<quiz.length;i++) {
+    var problem = quiz[i];
+    var question = problem.question;
+    if(question.indexOf("{}") >= 0) {
+      var segments = question.split("{}");
+      var $question = $('<span></span>').text(segments[0]);
+      for(var j=1;j<segments.length;j++) {
+        $question.append($('<div></div>').addClass('blank-box'));
+        $question.append($('<span></span>').text(segments[j]));
+      }
+      
+    } else {
+      $question = $('<span></span>').text(question);
+    }
+    var $answers = [];
+    if(typeof problem.answer === 'object') {
+	    for(var j=0;j<problem.answer.length; j++) {
+	      $answers.push($('<input>'))
+	    }
+    } else {
+    	$answers = $('<input>');
+    }
+    questions.push($("<p class='question'></p>").append($question))
+    questions.push($("<p class='answers'></p>").append($answers))
+  }
+  $('#target').append(questions);
+}
+
+//Utility Functions
 function random(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -54,7 +107,7 @@ function yesOrNo(bool) {
 	}
 }
 
-
+//Question functions
 function evalRomanNumeral() {
 	var num = random(1000, 3000);
 	var roman = convertToRomanNumeral(num);
@@ -102,32 +155,22 @@ function estimateSums() {
 	}
 }
 
-function makeQuiz() {
-	var quiz = []
-	for(var i=0;i<10;i++) {
-		quiz.push(problems[random(0, 4)]());
-	}
-	return quiz
-}
-
-function readQuiz(quiz) {
-	var count = 1;
-	for(var i=0;i<quiz.length;i++) {
-		var problem = quiz[i];
-		console.log(count + ") ")
-		console.log("Q: " + problem.question);
-		console.log("A: " + problem.answer);
-		console.log(" ");
-		count ++;
+function sumAndDiff() {
+	var nums = [random(2, 9), random(2, 9)];
+	var sum = nums[0] + nums[1];
+	var diff = Math.abs(nums[0] - nums[1]);
+	return {
+		question: "The difference of 2 numbers is " + diff + " and their sum is " + sum + ". What are the two numbers?",
+		answer: nums
 	}
 }
 
 
-var problems = [evalRomanNumeral, isPrime, roundToHundred, twoOfFour, estimateSums];
+var problems = [evalRomanNumeral, isPrime, roundToHundred, twoOfFour, estimateSums, sumAndDiff];
 
-current = problems[4]();
+current = problems[5]();
 
-readQuiz(makeQuiz())
+// readQuiz(makeQuiz())
 
-// console.log(current.question);
-// console.log(current.answer);
+console.log(current.question);
+console.log(current.answer);
