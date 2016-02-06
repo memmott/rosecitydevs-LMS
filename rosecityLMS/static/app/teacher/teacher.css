@@ -1,0 +1,51 @@
+/*
+#container { border: 2px solid red; }
+#nav-bar { border: 2px solid orange; }
+#content { border: 2px solid yellow; }
+*/
+/* RESETS */
+* {
+  box-sizing: border-box; }
+
+/* GENERAL CLASSES */
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.center-text {
+  text-align: center; }
+
+.center {
+  margin: 0 auto; }
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* PAGE SECTIONS */
+#container {
+  width: 95%; }
+
+#nav-bar {
+  width: 25%; }
+
+#content {
+  width: 75%; }
+
+/* NAVIGATION */
+#nav-main ul {
+  list-style-type: none; }
+  #nav-main ul li {
+    border: 1px solid #dadada;
+    padding: 5px; }
+
+/* VIEWS */
+/* GRADE BOOK */
+table#grades tr.table-title {
+  font-weight: bold;
+  font-size: 1.2em; }
+table#grades tr:nth-child(2) {
+  background: #dadada; }
