@@ -1,3 +1,46 @@
+$red: #FF0000;
+$orange: #FF7400;
+$yellow: #DCF900; 
+$green: #00CC00;
+$blue: #009999;
+$purple: #9004A8;
+
+//http://paletton.com/#uid=7000u0kw0w0jyC+oRxVy4oIDfjr
+//http://paletton.com/#uid=700220kw0w0jyC+oRxVy4oIDfjr
+
 #points {
 	float: right;
+}
+
+.subject {
+	height: 100px;
+	width: 350px;
+	border: 2px solid black; 
+	text-align: center;
+	margin: 15px; 
+}
+
+#math {
+	background: $blue;
+
+}
+
+#science {
+	background: $green;
+}
+
+#history {
+	background: $purple;
+}
+
+#english {
+	background: $yellow;
+}
+
+#health {
+	background: $red;
+}
+
+#foreign-language {
+	background: $orange;
 }

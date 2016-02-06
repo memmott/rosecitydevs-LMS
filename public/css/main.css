@@ -1,4 +1,29 @@
 #points {
   float: right; }
 
+.subject {
+  height: 100px;
+  width: 350px;
+  border: 2px solid black;
+  text-align: center;
+  margin: 15px; }
+
+#math {
+  background: #009999; }
+
+#science {
+  background: #00CC00; }
+
+#history {
+  background: #9004A8; }
+
+#english {
+  background: #DCF900; }
+
+#health {
+  background: #FF0000; }
+
+#foreign-language {
+  background: #FF7400; }
+
 /*# sourceMappingURL=main.css.map */
