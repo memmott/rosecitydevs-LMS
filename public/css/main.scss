@@ -15,32 +15,39 @@ $purple: #9004A8;
 .subject {
 	height: 100px;
 	width: 350px;
-	border: 2px solid black; 
+	border: 1px solid; 
+	border-radius: 2%;
 	text-align: center;
 	margin: 15px; 
 }
 
 #math {
 	background: $blue;
+	border-color: darken($blue, 10%);
 
 }
 
 #science {
 	background: $green;
+	border-color: darken($green, 10%);
 }
 
 #history {
 	background: $purple;
+	border-color: darken($purple, 10%);
 }
 
 #english {
 	background: $yellow;
+	border-color: darken($yellow, 10%);
 }
 
 #health {
 	background: $red;
+	border-color: darken($red, 10%);
 }
 
 #foreign-language {
 	background: $orange;
+    border-color: darken($orange, 10%);
 }
