@@ -1,13 +1,19 @@
-#FRONT END
-+Math Problems (Kenny)
-+Angular Controllers (Brigette/Kenny)
-+Views: Student, Teacher, Parent (Brigette/Michelle)
+### FRONT END
++ Views: Student, Teacher, Parent (Brigette/Michelle)
++ Views: Quiz (Kenny)
++ Math Problems (Kenny)
++ File Structure(Kenny/Tabatha)
 
+### BACK END 
++ Django Templates/Views(Tabatha/Kenny)
++ Django Models (Tabatha)
++ Security (Tabatha)
++ Login Authorization (Tabatha)
 
-#BACK END 
-+Security (Kenny & Tabatha)
-+Login Authorization 
+### DESIGN 
++ Wireframe (Lylah)
++ Page Designs(Lylah/?)
++ Images/Icons/Mascots? (Tabatha/Lylah)
 
-#DESIGN 
-+Wireframe (Lylah)
-+Images/Icons/Mascot? (Tabatha/Lylah)
+### Trello Board 
+https://trello.com/b/vuiyQZqC/rose-city-devs-lms
