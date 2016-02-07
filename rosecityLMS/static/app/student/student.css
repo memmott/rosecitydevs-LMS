@@ -1,0 +1,36 @@
+#points {
+  float: right; }
+
+.subject {
+  height: 100px;
+  width: 350px;
+  border: 1px solid;
+  border-radius: 2%;
+  text-align: center;
+  margin: 15px; }
+
+#math {
+  background: #009999;
+  border-color: #006666; }
+
+#science {
+  background: #00CC00;
+  border-color: #009900; }
+
+#history {
+  background: #9004A8;
+  border-color: #650376; }
+
+#english {
+  background: #DCF900;
+  border-color: #afc600; }
+
+#health {
+  background: #FF0000;
+  border-color: #cc0000; }
+
+#foreign-language {
+  background: #FF7400;
+  border-color: #cc5d00; }
+
+/*# sourceMappingURL=student.css.map */
