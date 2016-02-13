@@ -1,0 +1,19 @@
+.left { float: left; }
+.right { float: right; }
+.center { margin: 0 auto; }
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+/* TEXT */
+.center-text { text-align: center; }
+.left-text { text-align: left; }
+.right-text { text-align: right; }
+
+
+

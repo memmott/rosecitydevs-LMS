@@ -1,8 +1,3 @@
-/*
-#container { border: 2px solid red; }
-#nav-bar { border: 2px solid orange; }
-#content { border: 2px solid yellow; }
-*/
 /* RESETS */
 * {
   box-sizing: border-box; }
@@ -14,9 +9,6 @@
 .right {
   float: right; }
 
-.center-text {
-  text-align: center; }
-
 .center {
   margin: 0 auto; }
 
@@ -24,6 +16,16 @@
   content: "";
   display: table;
   clear: both; }
+
+/* TEXT */
+.center-text {
+  text-align: center; }
+
+.left-text {
+  text-align: left; }
+
+.right-text {
+  text-align: right; }
 
 /* PAGE SECTIONS */
 #container {
@@ -47,5 +49,20 @@
 table#grades tr.table-title {
   font-weight: bold;
   font-size: 1.2em; }
-table#grades tr:nth-child(2) {
+table#grades tr:nth-child(even) {
   background: #dadada; }
+table#grades thead {
+  cursor: pointer;
+  background: #c9dff0; }
+  table#grades thead tr th {
+    font-weight: bold;
+    padding: 12px 30px;
+    padding-left: 42px; }
+    table#grades thead tr th span {
+      padding-right: 20px;
+      background-repeat: no-repeat;
+      background-position: 100% 100%; }
+    table#grades thead tr th.headerSortUp span {
+      background-image: url("img/up-arrow.png"); }
+    table#grades thead tr th.headerSortDown span {
+      background-image: url("img/down-arrow.png"); }
