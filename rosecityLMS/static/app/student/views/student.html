@@ -1,14 +1,8 @@
 <div id="heading">
-	<h1> Welcome Student </h1> 
-	<div id="points"> Points </div>
+	<h1> Welcome {{students.firstName}}</h1> 
+	<div id="points"> {{student.classPoints}} </div>
 </div>
-<div id="courses">
-<!-- switch to database so we can use  {{course}} -->
-	<div id= "math" class="subject"> Math </div>
-	<div id="science" class="subject"> Science </div>
-	<div id="history" class="subject"> History </div>
-	<div id="english" class="subject"> Language Arts</div>
-	<div id="health" class="subject"> Health </div>
-	<div id="foreign-language"class="subject">Spanish</div>
-</div> 
+
+<div id="courses" ng-repeat="course in courses">
+	<div id="sub{{course.period}}" class="subject"> {{course.subject}} </div>
 </div>

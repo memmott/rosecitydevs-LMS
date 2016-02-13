@@ -9,27 +9,27 @@
   text-align: center;
   margin: 15px; }
 
-#math {
+#sub1 {
   background: #009999;
   border-color: #006666; }
 
-#science {
+#sub2 {
   background: #00CC00;
   border-color: #009900; }
 
-#history {
+#sub3 {
   background: #9004A8;
   border-color: #650376; }
 
-#english {
+#sub4 {
   background: #DCF900;
   border-color: #afc600; }
 
-#health {
+#sub5 {
   background: #FF0000;
   border-color: #cc0000; }
 
-#foreign-language {
+#sub6 {
   background: #FF7400;
   border-color: #cc5d00; }
 
