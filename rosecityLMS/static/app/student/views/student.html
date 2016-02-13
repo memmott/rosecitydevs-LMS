@@ -1,8 +1,8 @@
 <div id="heading">
 	<h1> Welcome {{students.firstName}}</h1> 
-	<div id="points"> {{student.classPoints}} </div>
+	<div id="points"> {{students.classPoints}} points </div> 
 </div>
 
-<div id="courses" ng-repeat="course in courses">
-	<div id="sub{{course.period}}" class="subject"> {{course.subject}} </div>
+<div class="courses" ng-repeat="course in courses">
+	<a ng-href="#"> <div id="sub{{course.period}}" class="subject"> <p> {{course.subject}} </p> </div> </a>
 </div>

@@ -1,36 +1,47 @@
-#points {
-  float: right; }
+.courses {
+  display: inline-block; }
 
 .subject {
-  height: 100px;
+  height: 175px;
   width: 350px;
   border: 1px solid;
   border-radius: 2%;
-  text-align: center;
   margin: 15px; }
+
+.subject p {
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  text-align: center; }
 
 #sub1 {
   background: #009999;
-  border-color: #006666; }
+  border-color: #006666;
+  float: left; }
 
 #sub2 {
   background: #00CC00;
-  border-color: #009900; }
+  border-color: #009900;
+  float: left; }
 
 #sub3 {
   background: #9004A8;
-  border-color: #650376; }
+  border-color: #650376;
+  float: left; }
 
 #sub4 {
   background: #DCF900;
-  border-color: #afc600; }
+  border-color: #afc600;
+  float: right; }
 
 #sub5 {
   background: #FF0000;
-  border-color: #cc0000; }
+  border-color: #cc0000;
+  float: right; }
 
 #sub6 {
   background: #FF7400;
-  border-color: #cc5d00; }
+  border-color: #cc5d00;
+  float: right; }
 
 /*# sourceMappingURL=student.css.map */
