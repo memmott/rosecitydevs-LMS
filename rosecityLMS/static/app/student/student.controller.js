@@ -9,6 +9,7 @@ angular.module('StudentApp', ['ngRoute'])
     
 .controller('StudentCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('mock/student.json').success(function(data){
+        $scope.students = data;
         console.log(data);
     }).error(function(err){
         console.log(err);
