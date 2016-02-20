@@ -42,4 +42,3 @@ class Assignment(models.Model):
         return unicode(self.title)
 
 
-# Create your models here.
