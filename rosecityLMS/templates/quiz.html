@@ -14,7 +14,11 @@
       <div id="quiz">
         <div class="question" ng-bind-html="current.question"></div>
         <div class="answer">
-          <input type="text" ng-repeat="answer in current.answers">
+          <input type="text" ng-repeat="answer in answerBoxes track by $index" ng-model="answer">
+        </div>
+        <div class="quiz-nav">
+          <button class="button-nav prev" ng-click="nav('prev')">prev</button>
+          <button class="button-nav next" ng-click="nav('next')">next</button>
         </div>
       </div>
     </main>

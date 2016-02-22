@@ -2,3 +2,49 @@ body {
   background-color: #222;
   color: #fff;
 }
+h1 {
+  text-align: center;
+}
+.question {
+  height: 100px;
+  font-size: 30px;
+  margin: 10px;
+  text-align: center;
+  div {
+    display: inline-block;
+  }
+}
+
+.answer {
+  width: 200px;
+  height: 100px;
+  margin: 20px auto;
+  input {
+    width: 166px;
+    padding: 6px;
+    border-radius: 6px;
+    background-color: #333;
+    border: 1px solid #444;
+    margin: 10px;
+  }
+}
+
+.blank-box {
+  height: 30px;
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin: 0 0 -6px;
+}
+.quiz-nav {
+  width: 122px;
+  margin: auto;
+}
+.button-nav {
+  padding: 6px;
+  border-radius: 6px;
+  background-color: #333;
+  border: 1px solid #444;
+  margin: 10px;
+  cursor: pointer;
+}

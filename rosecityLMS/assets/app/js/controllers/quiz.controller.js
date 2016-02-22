@@ -8,52 +8,13 @@ angular.module('LMSApp')
   function makeQuiz() {
     var quiz = []
     for(var i=0;i<10;i++) {
-      quiz.push(problems[random(0, problems.length - 1)]());
+      var question = problems[random(0, problems.length - 1)]();
+      if(typeof question.answer !== 'object') {
+        question.answer = [question.answer];
+      }
+      quiz.push(question);
     }
     return quiz
-  }
-
-  function readQuiz(quiz) {
-    var count = 1;
-    for(var i=0;i<quiz.length;i++) {
-      var problem = quiz[i];
-      console.log(count + ") ")
-      console.log("Q: " + problem.question);
-      console.log("A: " + problem.answer);
-      console.log(" ");
-      count ++;
-    }
-  }
-
-  function renderQuiz(quiz) {
-    var count = 1;
-    var questions = [];
-    var $quiz = [];
-    for(var i=0;i<quiz.length;i++) {
-      var problem = quiz[i];
-      var $question = [];
-      var $answers = [];
-      if(problem.question.indexOf("{}") >= 0) {
-        var segments = problem.question.split("{}");
-        $question.push(segments[0]);
-        for(var j=1;j<segments.length;j++) {
-          $question.push($('<div></div>').addClass('blank-box'));
-          $question.push(segments[j]);
-        }
-      } else {
-        $question = problem.question;
-      }
-      if(typeof problem.answer === 'object') {
-        for(var j=0;j<problem.answer.length; j++) {
-          $answers.push($('<input>'))
-        }
-      } else {
-        $answers = $('<input>');
-      }
-      $quiz.push($("<p class='question question-" + (i + 1) + "'></p>").append($question))
-      $quiz.push($("<p class='answers answer-" + (i + 1) + "'></p>").append($answers))
-    }
-    $('#quiz').append($quiz);
   }
 
   //Utility Functions
@@ -187,16 +148,23 @@ angular.module('LMSApp')
 
   var problems = [evalRomanNumeral, isPrime, roundToHundred, twoOfFour, estimateSums, sumAndDiff, varExpression, increasingGrowth];
   $scope.quiz = makeQuiz();
+  $scope.index = 0;
   $scope.current = $scope.quiz[0];
-  console.log($scope.current.question)
-  // renderQuiz(makeQuiz())
+  console.log($scope.current.question);
+  console.log($scope.current.answer);
+  $scope.answerBoxes = $scope.current.answer.map(function(q, i) { return '' });
 
-  // readQuiz(makeQuiz())
+  $scope.nav = function(command) {
+    console.log(command)
+    if(command == 'prev' && $scope.index > 0) {
+      $scope.index = $scope.index -= 1;
+    } else if(command == 'next' && $scope.index < $scope.quiz.length - 1) {
+      $scope.index = $scope.index += 1;
+    }
+    $scope.current = $scope.quiz[$scope.index];
+    $scope.answerBoxes = $scope.current.answer.map(function(q, i) { return '' });
+  }
 
-
-  // var current = problems[7]();
-  // console.log(current.question);
-  // console.log(current.answer);
 
 
   /* Notes:
