@@ -138,7 +138,7 @@ angular.module('QuizApp', [])
     var total = nums[1] + nums[2];
     var answer = [nums[1], nums[2]];
     return {
-      question: "Choose two numbers in [" + nums.sort().join(", ") + "] to make {} + {} = " + total,
+      question: "Choose two numbers in <div class='number-box'>" + nums.sort().join(", ") + "</div> to make <div class='blank-box'></div> + <div class='blank-box'></div> = " + total,
       answer: answer
     };
   }
@@ -179,22 +179,23 @@ angular.module('QuizApp', [])
       nums.push(nums[i] + growth)
     }
     return {
-      question: "Type the next number in this sequence: " + nums.slice(0, 5).join(", ") + ", {}.",
+      question: "Type the next number in this sequence: " + nums.slice(0, 5).join(", ") + ", <div class='blank-box'></div>.",
       answer: nums[5]
     }
   }
 
   var problems = [evalRomanNumeral, isPrime, roundToHundred, twoOfFour, estimateSums, sumAndDiff, varExpression, increasingGrowth];
-
-
+  $scope.quiz = makeQuiz();
+  $scope.current = $scope.quiz[0];
+  console.log($scope.current.question)
   // renderQuiz(makeQuiz())
 
   // readQuiz(makeQuiz())
 
 
-  var current = problems[7]();
-  console.log(current.question);
-  console.log(current.answer);
+  // var current = problems[7]();
+  // console.log(current.question);
+  // console.log(current.answer);
 
 
   /* Notes:
