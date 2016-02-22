@@ -1,4 +1,5 @@
-angular.module('QuizApp', [])
+angular.module('LMSApp')
+
 
 .controller('MainController', function($scope) {
 

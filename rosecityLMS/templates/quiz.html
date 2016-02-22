@@ -1,22 +1,25 @@
-<!DOCTYPE html>
+{% extends 'layout.html' %}
 {% load staticfiles %}
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Quiz</title>
-</head>
-<body ng-app="QuizApp" ng-controller="MainController">
-  <h1>Quiz View</h1>
-  <div id="quiz">
-    <div class="question">
-      {{current.question}}
-    </div>
-    <div class="answer">
-      <input type="text" ng-repeat="answer in current.answers">
-    </div>
-  </div>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
-  <script src="{% static 'app/quiz/quiz.controller.js' %}"></script>
-</body>
-</html>
+
+{% block title %}Quiz{% endblock %}
+
+{% block content %}
+  {% verbatim %}
+    <main ng-controller="MainController">
+      <h1>Quiz View</h1>
+      <div id="quiz">
+        <div class="question">
+          {{current.question}}
+        </div>
+        <div class="answer">
+          <input type="text" ng-repeat="answer in current.answers">
+        </div>
+      </div>
+    </main>
+  {% endverbatim %}
+{% endblock %}
+
+
+{% block scripts %}
+  <script src="{% static 'app/js/controllers/quiz.controller.js' %}"></script>
+{% endblock %}

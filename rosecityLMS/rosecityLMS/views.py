@@ -6,16 +6,16 @@ def home(request):
 
 
 def student_view(request):
-    return render(request, 'app/student/student.html')
+    return render(request, 'student.html')
 
 
 def teacher_view(request):
-    return render(request, 'app/teacher/teacher.html')
+    return render(request, 'teacher.html')
 
 
 def quiz_view(request):
-    return render(request, 'app/quiz/quiz.html')
+    return render(request, 'quiz.html')
 
 
 def parent_view(request):
-    return render(request, 'app/parent/parent.html')
+    return render(request, 'parent.html')

@@ -1,0 +1,1 @@
+{"version":3,"file":"quiz.css","sources":["quiz.scss"],"sourcesContent":["body {\r\n  background-color: #222;\r\n  color: #fff;\r\n}"],"mappings":"AAAA,IAAI,CAAC;EACH,gBAAgB,EAAE,IAAK;EACvB,KAAK,EAAE,IAAK,GACb","names":[],"sourceRoot":"/source/"}
