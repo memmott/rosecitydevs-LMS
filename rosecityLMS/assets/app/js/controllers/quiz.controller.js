@@ -1,7 +1,7 @@
 angular.module('LMSApp')
 
 
-.controller('MainController', function($scope) {
+.controller('MainController', function($scope, $sce) {
 
 
   // Quiz Functions

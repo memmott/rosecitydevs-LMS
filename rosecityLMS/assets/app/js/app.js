@@ -1,1 +1,1 @@
-angular.module('LMSApp', [])
+angular.module('LMSApp', ['ngSanitize'])

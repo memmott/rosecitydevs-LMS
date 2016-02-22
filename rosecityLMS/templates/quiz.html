@@ -3,14 +3,16 @@
 
 {% block title %}Quiz{% endblock %}
 
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'app/styles/quiz.css' %}">
+{% endblock %}
+
 {% block content %}
   {% verbatim %}
     <main ng-controller="MainController">
       <h1>Quiz View</h1>
       <div id="quiz">
-        <div class="question">
-          {{current.question}}
-        </div>
+        <div class="question" ng-bind-html="current.question"></div>
         <div class="answer">
           <input type="text" ng-repeat="answer in current.answers">
         </div>
