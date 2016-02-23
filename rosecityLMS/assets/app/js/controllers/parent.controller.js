@@ -1,6 +1,6 @@
-angular.module('ParentApp', [])
+angular.module('LMSApp')
 
-.controller('MainController', function($scope) {
+.controller('ParentController', function($scope) {
 
 
 });

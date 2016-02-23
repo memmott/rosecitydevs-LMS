@@ -1,20 +1,28 @@
-angular.module('StudentApp', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {
-        controller:'StudentCtrl',
-        templateUrl:'views/student.html'
-    })
-}])
+angular.module('LMSApp')
     
-.controller('StudentCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get('mock/student.json').success(function(data){
-        $scope.students = data;
-        $scope.courses = data.courses;
-        console.log($scope.courses)
-        console.log(data);
-    }).error(function(err){
-        console.log(err);
-    });
-
-}]);
+.controller('StudentController', function($scope, $http) {
+  $scope.student = { 
+    firstName: 'Brigette',
+    lastName: 'Eckert',
+    classPoints: 5,
+    courses: [{
+      period: 1,
+      subject: 'Math'
+    }, {
+      period: 2,
+      subject: 'Science'
+    }, {
+      period: 3,
+      subject: 'History'
+    }, {
+      period: 4,
+      subject: 'Language Arts'
+    }, {
+      period: 5,
+      subject: 'Health'
+    }, {
+      period: 6,
+      subject: 'Spanish'
+    }]
+  };
+});

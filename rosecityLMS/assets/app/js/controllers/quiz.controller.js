@@ -1,7 +1,7 @@
 angular.module('LMSApp')
 
 
-.controller('MainController', function($scope, $sce) {
+.controller('QuizController', function($scope, $sce) {
 
 
   // Quiz Functions
@@ -150,12 +150,9 @@ angular.module('LMSApp')
   $scope.quiz = makeQuiz();
   $scope.index = 0;
   $scope.current = $scope.quiz[0];
-  console.log($scope.current.question);
-  console.log($scope.current.answer);
   $scope.answerBoxes = $scope.current.answer.map(function(q, i) { return '' });
 
   $scope.nav = function(command) {
-    console.log(command)
     if(command == 'prev' && $scope.index > 0) {
       $scope.index = $scope.index -= 1;
     } else if(command == 'next' && $scope.index < $scope.quiz.length - 1) {
@@ -163,6 +160,8 @@ angular.module('LMSApp')
     }
     $scope.current = $scope.quiz[$scope.index];
     $scope.answerBoxes = $scope.current.answer.map(function(q, i) { return '' });
+    console.log($scope.current.question);
+    console.log($scope.current.answer);
   }
 
 
