@@ -1,6 +1,6 @@
-angular.module('TeacherApp', [])
+angular.module('LMSApp')
 
-.controller('MainController', function($scope) {
+.controller('TeacherController', function($scope) {
 
 
 });

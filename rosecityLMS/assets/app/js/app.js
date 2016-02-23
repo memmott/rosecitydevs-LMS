@@ -1,1 +1,1 @@
-angular.module('LMSApp', ['ngSanitize'])
+angular.module('LMSApp', ['ngSanitize', 'ngRoute'])
