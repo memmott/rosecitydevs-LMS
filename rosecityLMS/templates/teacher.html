@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Teacher</title>
-</head>
-<body>
-  <h1>Teacher View</h1>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+{% block title %}Teacher Dashboard{% endblock %}
+
+
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'app/styles/teacher.css' %}">
+{% endblock %}
+
+{% block content %}  
+  {% verbatim %}
+    <main ng-controller="TeacherController">
+      <div id="container" class="center">
+        <aside id="nav-bar" class="left">
+            <nav id="nav-main" class="center-text">
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Grade Book</li>
+                    <li>Lesson Plans</li>
+                    <li>Assignments</li>
+                    <li>Behavior Points</li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="content" class="left clearfix">
+          <div ui-view=""></div>
+        </div>
+      </div>
+    </main>
+  {% endverbatim %}
+{% endblock %}
+
+{% block scripts %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.25.4/js/jquery.tablesorter.js"></script>
+  <script src="{% static 'app/js/controllers/teacher.controller.js' %}"></script>
+{% endblock %}

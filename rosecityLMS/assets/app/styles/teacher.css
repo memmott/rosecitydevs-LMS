@@ -1,2 +1,72 @@
+/* RESETS */
+* {
+  box-sizing: border-box; }
+
+/* GENERAL CLASSES */
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.center {
+  margin: 0 auto; }
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* TEXT */
+.center-text {
+  text-align: center; }
+
+.left-text {
+  text-align: left; }
+
+.right-text {
+  text-align: right; }
+
+/* PAGE SECTIONS */
+#container {
+  width: 95%; }
+
+#nav-bar {
+  width: 25%; }
+
+#content {
+  width: 75%; }
+
+/* NAVIGATION */
+#nav-main ul {
+  list-style-type: none; }
+  #nav-main ul li {
+    border: 1px solid #dadada;
+    padding: 5px; }
+
+/* VIEWS */
+/* GRADE BOOK */
+table#grades tr.table-title {
+  font-weight: bold;
+  font-size: 1.2em; }
+
+table#grades tr:nth-child(even) {
+  background: #dadada; }
+
+table#grades thead {
+  cursor: pointer;
+  background: #c9dff0; }
+  table#grades thead tr th {
+    font-weight: bold;
+    padding: 12px 30px;
+    padding-left: 42px; }
+    table#grades thead tr th span {
+      padding-right: 20px;
+      background-repeat: no-repeat;
+      background-position: 100% 100%; }
+    table#grades thead tr th.headerSortUp span {
+      background-image: url("img/up-arrow.png"); }
+    table#grades thead tr th.headerSortDown span {
+      background-image: url("img/down-arrow.png"); }
 
 /*# sourceMappingURL=teacher.css.map */
